@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+ <head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>Ouvidoria - Universidade Federal de Alagoas</title>
+ </head>
+ <body>
+  <style>
+   textarea{width:350px; height: 150px}
+   button,input[type=submit]{width:175px; height: 30px}
+  </style>
+  <div align="center">
+   <form method="POST">
+    <input type="text" id="nomef" placeholder="Nome">
+    <input type="number" id="matriculaf" placeholder="Matrícula">
+    <table width="250" border="0">
+     <tr>
+      <td>
+       <select id="cursof">
+        <option>Direito</option>
+        <option>Arquitetura e Urbanismo</option>
+       </select>
+      </td>
+     </tr>
+     <input type="email" id="emailf" placeholder="E-mail">
+     <tr>
+      <td>
+       <select id="deficienciaf">
+        <option>Amputação</option>
+        <option>Hemiparesia</option>
+        <option>Hemiplegia</option>
+        <option>Monoparesia</option>
+        <option>Monoplegia</option>
+        <option>Ostomia</option>
+        <option>Paralisia Cerebral</option>
+        <option>Paraparesia</option>
+        <option>Paraplegia</option>
+        <option>Tetraparesia</option>
+        <option>Tetraplegia</option>
+        <option>Triparesia</option>
+        <option>Triplegia</option>
+       </select>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       <select id="categoriaf">
+        <option>Estrutura de Acesso</option>
+        <option>Ferramentas de Aprendizagem</option>
+       </select>
+      </td>
+     </tr>
+     <tr>
+      <td><textarea placeholder="Reclamação..." id="textof"></textarea></td>
+     </tr>
+     <tr>
+      <td align="center">
+       <input type="submit" value="Enviar Reclamação">
+      </td>
+     </tr>
+    </table>
+   </form>
+   <button id="cleardb">Limpar Banco de Dados</button>
+  </div>
+  <ul></ul>
+  <script>
+  const form = document.querySelector('form');
+  const ul = document.querySelector('ul');
+  const cleardb = document.getElementById('cleardb');
+  const nome = document.getElementById('nomef');
+  const matricula = document.getElementById('matriculaf');
+  const curso = document.getElementById('cursof');
+  const email = document.getElementById('emailf');
+  const deficiencia = document.getElementById('deficienciaf');
+  const categoria = document.getElementById('categoriaf');
+  const texto = document.getElementById('textof');
+  let itemsArray = localStorage.getItem('db') ? JSON.parse(localStorage.getItem('db')) : [];
+  localStorage.setItem('db', JSON.stringify(itemsArray));
+  const data = JSON.parse(localStorage.getItem('db'));
+  const liMaker = (text) => {
+    const li = document.createElement('li');
+    li.textContent = text;
+    ul.appendChild(li);
+  }
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    itemsArray.push(nome.value);
+    itemsArray.push(matricula.value);
+    itemsArray.push(curso.value);
+    itemsArray.push(email.value);
+    itemsArray.push(deficiencia.value);
+    itemsArray.push(categoria.value);
+    itemsArray.push(texto.value);
+    localStorage.setItem('db', JSON.stringify(itemsArray));
+    liMaker(nome.value);
+    liMaker(matricula.value);
+    liMaker(curso.value);
+    liMaker(email.value);
+    liMaker(deficiencia.value);
+    liMaker(categoria.value);
+    liMaker(texto.value);
+  });
+  data.forEach(item => {
+    liMaker(item);
+  });
+  cleardb.addEventListener('click', function () {
+    localStorage.clear();
+    while (ul.firstChild) {
+      ul.removeChild(ul.firstChild);
+    }
+  });
+  </script>
+ </body>
+</html>

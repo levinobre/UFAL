@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+	<title>Painel - T-Partner</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/vendor/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="assets/vendor/linearicons/style.css">
+	<link rel="stylesheet" href="assets/vendor/chartist/css/chartist-custom.css">
+	<link rel="stylesheet" href="assets/css/main.css">
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
+</head>
+<body>
+	<div id="wrapper">
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="brand">
+				<a href="index.html">T-Partner</a>
+			</div>
+			<div class="container-fluid">
+				<div class="navbar-btn">
+					<button type="button" class="btn-toggle-fullwidth"><i class="lnr lnr-arrow-left-circle"></i></button>
+				</div>
+				<form class="navbar-form navbar-left">
+					<div class="input-group">
+						<input type="text" value="" class="form-control" placeholder="Pesquisar...">
+						<span class="input-group-btn"><button type="button" class="btn btn-primary">Ir</button></span>
+					</div>
+				</form>
+				<div id="navbar-menu">
+					<ul class="nav navbar-nav navbar-right">
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle icon-menu" data-toggle="dropdown">
+								<i class="lnr lnr-alarm"></i>
+								<span class="badge bg-danger">4</span>
+							</a>
+							<ul class="dropdown-menu notifications">
+								<li><a href="#" class="notification-item"><span class="dot bg-warning"></span>Você tem apenas 1 dia para terminar a atividade de Geometria Analítica</a></li>
+								<li><a href="#" class="notification-item"><span class="dot bg-danger"></span>Você tem apenas 12 horas para terminar a atividade de Geometria Analítica</a></li>
+								<li><a href="#" class="notification-item"><span class="dot bg-success"></span>Parabéns! Sua atividade foi enviada para o(a) professor(a).</a></li>
+								<li><a href="#" class="notification-item"><span class="dot bg-info"></span>Gostaria de iniciar monitoria na matéria "Banco de Dados I"? Clique aqui e saiba mais.</a></li>
+								<li><a href="#" class="more">Ver todas as notificações</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="lnr lnr-question-circle"></i> <span>Ajuda</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
+							<ul class="dropdown-menu">
+								<li><a href="#">Como Usar</a></li>
+								<li><a href="#">Fazer uma Reclamação</a></li>
+								<li><a href="#">Suporte</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="assets/img/user.png" class="img-circle" alt="Avatar"> <span>Levi</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
+							<ul class="dropdown-menu">
+								<li><a href="#"><i class="lnr lnr-user"></i> <span>Meu Perfil</span></a></li>
+								<li><a href="#"><i class="lnr lnr-envelope"></i> <span>Mensagens</span></a></li>
+								<li><a href="#"><i class="lnr lnr-cog"></i> <span>Configurações</span></a></li>
+								<li><a href="#"><i class="lnr lnr-exit"></i> <span>Sair</span></a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div id="sidebar-nav" class="sidebar">
+			<div class="sidebar-scroll">
+				<nav>
+					<ul class="nav">
+						<li><a href="index.html" class="active"><i class="lnr lnr-home"></i> <span>Painel</span></a></li>
+						<li><a href="#" class=""><i class="lnr lnr-code"></i> <span>Atividades</span></a></li>
+						<li><a href="#" class=""><i class="lnr lnr-chart-bars"></i> <span>Desempenho</span></a></li>
+						<li><a href="#" class=""><i class="lnr lnr-cog"></i> <span>Configurações</span></a></li>
+						<li><a href="#" class=""><i class="lnr lnr-alarm"></i> <span>Notificações</span></a></li>
+						<li>
+							<a href="#subMaterias" data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i> <span>Matérias</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+							<div id="subMaterias" class="collapse ">
+								<ul class="nav">
+									<li><a href="#" class="">Matéria 1</a></li>
+									<li><a href="#" class="">Matéria 2</a></li>
+									<li><a href="#" class="">Matéria 3</a></li>
+								</ul>
+							</div>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+		<div class="main">
+			<div class="main-content">
+				<div class="container-fluid">
+					<div class="panel panel-headline">
+						<div class="panel-heading">
+							<h3 class="panel-title">Resumo</h3>
+						</div>
+						<div class="panel-body">
+							<div class="row">
+								<div class="col-md-3">
+									<div class="metric">
+										<span class="icon"><i class="fa fa-check"></i></span>
+										<p>
+											<span class="number">33</span>
+											<span class="title">Concluídas</span>
+										</p>
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div class="metric">
+										<span class="icon"><i class="fa fa-clock-o"></i></span>
+										<p>
+											<span class="number">2</span>
+											<span class="title">Pendentes</span>
+										</p>
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div class="metric">
+										<span class="icon"><i class="fa fa-file"></i></span>
+										<p>
+											<span class="number">4</span>
+											<span class="title">Matérias</span>
+										</p>
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div class="metric">
+										<span class="icon"><i class="fa fa-bar-chart"></i></span>
+										<p>
+											<span class="number">65%</span>
+											<span class="title">Progresso</span>
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-8">
+							<div class="panel">
+								<div class="panel-heading">
+									<h3 class="panel-title">Matérias</h3>
+									<div class="right">
+										<button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
+										<button type="button" class="btn-remove"><i class="lnr lnr-cross"></i></button>
+									</div>
+								</div>
+								<div class="panel-body no-padding">
+									<table class="table table-striped">
+										<thead>
+											<tr>
+												<th>Código da Matéria</th>
+												<th>Professor(a)</th>
+												<th>Atividades</th>
+												<th>Data de Inscrição</th>
+												<th>Situação</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td><a href="#">765648</a></td>
+												<td>José</td>
+												<td>3</td>
+												<td>02 de Março de 2019</td>
+												<td><span class="label label-success">APROVADO(A)</span></td>
+											</tr>
+											<tr>
+												<td><a href="#">763749</a></td>
+												<td>João</td>
+												<td>7</td>
+												<td>05 de Fevereiro de 2019</td>
+												<td><span class="label label-warning">RESULTADO PENDENTE</span></td>
+											</tr>
+											<tr>
+												<td><a href="#">761650</a></td>
+												<td>Sandra</td>
+												<td>12</td>
+												<td>18 de Janeiro de 2019</td>
+												<td><span class="label label-danger">REPROVADO(A)</span></td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="panel-footer">
+									<div class="row">
+										<div class="col-md-6"><span class="panel-note"><i class="fa fa-clock-o"></i> 2019.1</span></div>
+										<div class="col-md-6 text-right"><a href="#" class="btn btn-primary">Ver Todas as Matérias</a></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="panel">
+								<div class="panel-heading">
+									<h3 class="panel-title">Minhas Atividades</h3>
+									<div class="right">
+										<button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
+										<button type="button" class="btn-remove"><i class="lnr lnr-cross"></i></button>
+									</div>
+								</div>
+								<div class="panel-body">
+									<ul class="list-unstyled task-list">
+										<li>
+											<p>Atualizar Usuários do Banco de Dados <span class="label-percent">23%</span></p>
+											<div class="progress progress-xs">
+												<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="23" aria-valuemin="0" aria-valuemax="100" style="width:23%">
+													<span class="sr-only">23% Concluída</span>
+												</div>
+											</div>
+										</li>
+										<li>
+											<p>Criar uma Barra de Navegação <span class="label-percent">80%</span></p>
+											<div class="progress progress-xs">
+												<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+													<span class="sr-only">80% Concluída</span>
+												</div>
+											</div>
+										</li>
+										<li>
+											<p>Instalar o MySQL em um Servidor <span class="label-percent">45%</span></p>
+											<div class="progress progress-xs">
+												<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%">
+													<span class="sr-only">45% Concluída</span>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-7">
+							<div class="panel">
+								<div class="panel-heading">
+									<h3 class="panel-title">To-Do List</h3>
+									<div class="right">
+										<button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
+										<button type="button" class="btn-remove"><i class="lnr lnr-cross"></i></button>
+									</div>
+								</div>
+								<div class="panel-body">
+									<ul class="list-unstyled todo-list">
+										<li>
+											<label class="control-inline fancy-checkbox">
+												<input type="checkbox"><span></span>
+											</label>
+											<p>
+												<span class="title">Começar a atividade de Banco de Dados</span>
+												<span class="short-description">Preciso terminar os indexes de todas as tabelas.</span>
+												<span class="date">10 de fevereiro de 2019</span>
+											</p>
+											<div class="controls">
+												<a href="#"><i class="icon-software icon-software-pencil"></i></a> <a href="#"><i class="icon-arrows icon-arrows-circle-remove"></i></a>
+											</div>
+										</li>
+										<li>
+											<label class="control-inline fancy-checkbox">
+												<input type="checkbox"><span></span>
+											</label>
+											<p>
+												<span class="title">Terminar as listas de Cálculo I</span>
+												<span class="short-description">Falta apenas as questões 4 e 7.</span>
+												<span class="date">11 de fevereiro de 2019</span>
+											</p>
+											<div class="controls">
+												<a href="#"><i class="icon-software icon-software-pencil"></i></a> <a href="#"><i class="icon-arrows icon-arrows-circle-remove"></i></a>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-5">
+							<div class="panel panel-scrolling">
+								<div class="panel-heading">
+									<h3 class="panel-title">Atualizações Recentes</h3>
+									<div class="right">
+										<button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
+										<button type="button" class="btn-remove"><i class="lnr lnr-cross"></i></button>
+									</div>
+								</div>
+								<div class="panel-body">
+									<ul class="list-unstyled activity-list">
+										<li>
+											<img src="assets/img/user1.png" alt="Avatar" class="img-circle pull-left avatar">
+											<p><a href="#">Pedro</a> concluiu todas as atividades pendentes <span class="timestamp">2 minutos atrás</span></p>
+										</li>
+										<li>
+											<img src="assets/img/user2.png" alt="Avatar" class="img-circle pull-left avatar">
+											<p><a href="#">João</a> concluiu a atividade <a href="#">Criar Banco de Dados</a> <span class="timestamp">7 minutos atrás</span></p>
+										</li>
+										<li>
+											<img src="assets/img/user3.png" alt="Avatar" class="img-circle pull-left avatar">
+											<p><a href="#">Maria</a> disponibilizou uma nova atividade para a turma de <a href="#">Banco de Dados</a> <span class="timestamp">18 minutos atrás</span></p>
+										</li>
+										<li>
+											<img src="assets/img/user4.png" alt="Avatar" class="img-circle pull-left avatar">
+											<p><a href="#">Cláudia</a> tornou-se monitora da matéria <a href="#">Cálculo I</a> <span class="timestamp">32 minutos atrás</span></p>
+										</li>
+										<li>
+											<img src="assets/img/user5.png" alt="Avatar" class="img-circle pull-left avatar">
+											<p><a href="#">Mateus</a> tornou-se diretor do curso de <a href="#">Ciências da Computação</a> <span class="timestamp">45 minutos atrás</span></p>
+										</li>
+									</ul>
+									<button type="button" class="btn btn-primary btn-bottom center-block">Mostrar Mais</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="clearfix"></div>
+		<footer>
+			<div class="container-fluid">
+				<p class="copyright">&copy; 2019 T-Partner. Todos os Direitos Reservados.</p>
+			</div>
+		</footer>
+	</div>
+	<script src="assets/vendor/jquery/jquery.min.js"></script>
+	<script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+	<script src="assets/vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js"></script>
+	<script src="assets/vendor/chartist/js/chartist.min.js"></script>
+	<script src="assets/scripts/kc.js"></script>
+</body>
+</html>
